@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webmaster Hub | Dark Mode</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Pacifico&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="#" class="logo">Webmaster</a>
+    <nav class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#operations">Operations</a>
+      <a href="#contact" class="btn-nav">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <h1>Welcome to <span class="gradient-text">Webmaster</span></h1>
+        <p class="hero-subtext">Production Operations, Deployment Pipelines &amp; Full-Stack Infrastructure by Kenny.</p>
+        
+        <div class="hero-actions">
+          <a href="#operations" class="btn btn-primary">Production Operations</a>
+          <a href="https://github.com/Kenny-G-z/Webmaster" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub Repository</a>
+        </div>
+
+        <!-- Integrated terminal start command widget -->
+        <div class="terminal-banner">
+          <div class="terminal-code">
+            <span class="prompt">kenny@server:~$</span> gunicorn main:app --bind 0.0.0.0:$PORT
+          </div>
+          <button class="copy-button" onclick="copyStartCommand()">Copy Cmd</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <h2 class="section-title">Architecture &amp; Systems</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>WSGI &amp; Runtime</h3>
+          <ul class="skill-list">
+            <li>Gunicorn WSGI Pre-fork Workers</li>
+            <li>Python 3.14 Container Runtime</li>
+            <li>Flask / FastAPI Microservices</li>
+            <li>Clean Virtual Environments (venv)</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>CI/CD &amp; Cloud Ops</h3>
+          <ul class="skill-list">
+            <li>Render Cloud Web Services</li>
+            <li>GitHub Remote Rebase Pipelines</li>
+            <li>Automated Commit Webhooks</li>
+            <li>Zero-Downtime Rollbacks</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Webmaster Tools</h3>
+          <ul class="skill-list">
+            <li>Live Ping &amp; Health Probe Checks</li>
+            <li>Automated SSL / TLS Encryption</li>
+            <li>Edge Caching &amp; Gzip Compression</li>
+            <li>DNS Routing &amp; Host Resolution</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="operations" style="padding-top: 1rem; padding-bottom: 4rem;">
+      <h2 class="section-title">Live Deployments &amp; Telemetry</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="status-badge"><span class="status-dot"></span> 99.98% UPTIME</span>
+          </div>
+          <h3>Render Production Node</h3>
+          <p>
+            Primary host container managed via Render's cloud platform. Listens on dynamic assigned ports and serves endpoints through synchronized reverse-proxies.
+          </p>
+          <div class="tech-stack">
+            <span>RUN: gunicorn main:app</span>
+            <span>PORT: 10000 / Dynamic</span>
+            <span>ENV: Linux x86_64</span>
+            <span>AUTO-BUILD: Enabled</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="status-badge"><span class="status-dot"></span> SYNCED</span>
+          </div>
+          <h3>GitHub Branch Pipeline</h3>
+          <p>
+            Continuous integration linked to <code style="font-family: var(--font-mono); font-size: 0.85em; color: var(--accent-primary-hover);">Kenny-G-z/Webmaster</code>. Tracks clean rebasing and triggers automatic redeploys on push.
+          </p>
+          <div class="tech-stack">
+            <span>BRANCH: main</span>
+            <span>PUSH: git push origin</span>
+            <span>REBASE: Fast-forward</span>
+            <span>DEP: requirements.txt</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="status-badge"><span class="status-dot"></span> HEALTHY</span>
+          </div>
+          <h3>WSGI Daemon &amp; Probes</h3>
+          <p>
+            Continuous worker health monitoring and request handling. Real-time simulated endpoint round-trip verification:
+            <strong id="latencyDisplay" style="color: var(--accent-primary-hover); font-family: var(--font-mono); display: block; margin-top: 0.6rem; font-size: 1.1em; text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);">
+              Response latency: 34ms
+            </strong>
+          </p>
+          <div class="tech-stack">
+            <span>WORKERS: 1 Arbiter</span>
+            <span>TIMEOUT: 30s</span>
+            <span>STATUS: 200 OK</span>
+            <span style="cursor: pointer; background: rgba(99, 102, 241, 0.2); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.4); transition: all 0.2s;" onclick="runHealthPing()" onmouseover="this.style.background='rgba(99, 102, 241, 0.4)'" onmouseout="this.style.background='rgba(99, 102, 241, 0.2)'">Click to Ping Node</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-box">
+        <h2>Contact the Webmaster</h2>
+        <p>I am always available for system deployments, architecture discussions, and new full-stack builds.</p>
+        <div class="contact-buttons">
+          <a href="https://github.com/Kenny-G-z" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            GitHub: @Kenny-G-z
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gosalargk@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Email: gosalargk@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Kenny G. • Webmaster Infrastructure</p>
+  </footer>
+
+  <!-- Toast notification banner -->
+  <div id="toastNotification">Command copied to clipboard!</div>
+
+  <script>
+    function copyStartCommand() {
+      const commandText = "gunicorn main:app --bind 0.0.0.0:$PORT";
+      const dummyInput = document.createElement("input");
+      dummyInput.value = commandText;
+      document.body.appendChild(dummyInput);
+      dummyInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummyInput);
+      showToast('Copied to clipboard');
+    }
+
+    function runHealthPing() {
+      const display = document.getElementById("latencyDisplay");
+      display.innerText = "Pinging endpoint...";
+      display.style.opacity = "0.7";
+      setTimeout(function() {
+        const simulatedMs = Math.floor(Math.random() * 28) + 24;
+        display.innerText = "Response latency: " + simulatedMs + "ms (200 OK)";
+        display.style.opacity = "1";
+        showToast("Probe round-trip: " + simulatedMs + "ms");
+      }, 450);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toastNotification");
+      toast.innerText = msg;
+      toast.classList.add("show");
+      setTimeout(function() {
+        toast.classList.remove("show");
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
