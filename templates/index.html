@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,10 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Pacifico&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Link to your external CSS file -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Links to style.css in the static folder -->
+  <link rel="stylesheet" href="/static/style.css">
 </head>
-
 <body>
   <header class="navbar">
     <a href="#" class="logo">Webmaster</a>
@@ -37,7 +35,6 @@
           <a href="/game" class="btn btn-secondary">Check /game Route</a>
         </div>
 
-        <!-- Integrated terminal start command widget -->
         <div class="terminal-banner">
           <div class="terminal-code">
             <span class="prompt">kenny@server:~$</span> gunicorn main:app --bind 0.0.0.0:$PORT
@@ -50,7 +47,6 @@
     <section id="architecture">
       <h2 class="section-title">Architecture &amp; Systems</h2>
       <div class="skills-grid">
-
         <div class="skill-card">
           <h3>WSGI &amp; Runtime</h3>
           <ul class="skill-list">
@@ -60,7 +56,6 @@
             <li>Clean Virtual Environments (venv)</li>
           </ul>
         </div>
-
         <div class="skill-card">
           <h3>CI/CD &amp; Cloud Ops</h3>
           <ul class="skill-list">
@@ -70,7 +65,6 @@
             <li>Zero-Downtime Rollbacks</li>
           </ul>
         </div>
-
         <div class="skill-card">
           <h3>Webmaster Tools</h3>
           <ul class="skill-list">
@@ -80,22 +74,18 @@
             <li>DNS Routing &amp; Host Resolution</li>
           </ul>
         </div>
-
       </div>
     </section>
 
     <section id="operations" style="padding-top: 1rem; padding-bottom: 4rem;">
       <h2 class="section-title">Live Deployments &amp; Telemetry</h2>
       <div class="projects-grid">
-
         <div class="project-card">
           <div class="project-header">
             <span class="status-badge"><span class="status-dot"></span> 99.98% UPTIME</span>
           </div>
           <h3>Render Production Node</h3>
-          <p>
-            Primary host container managed via Render's cloud platform. Listens on dynamic assigned ports and serves endpoints through synchronized reverse-proxies.
-          </p>
+          <p>Primary host container managed via Render's cloud platform. Listens on dynamic assigned ports and serves endpoints through synchronized reverse-proxies.</p>
           <div class="tech-stack">
             <span>RUN: gunicorn main:app</span>
             <span>PORT: 10000 / Dynamic</span>
@@ -103,15 +93,12 @@
             <span>AUTO-BUILD: Enabled</span>
           </div>
         </div>
-
         <div class="project-card">
           <div class="project-header">
             <span class="status-badge"><span class="status-dot"></span> SYNCED</span>
           </div>
           <h3>GitHub Branch Pipeline</h3>
-          <p>
-            Continuous integration linked to <code style="font-family: var(--font-mono); font-size: 0.85em; color: var(--accent-primary-hover);">Kenny-G-z/Webmaster</code>. Tracks clean rebasing and triggers automatic redeploys on push.
-          </p>
+          <p>Continuous integration linked to <code style="font-family: var(--font-mono); font-size: 0.85em; color: var(--accent-primary-hover);">Kenny-G-z/Webmaster</code>. Tracks clean rebasing and triggers automatic redeploys on push.</p>
           <div class="tech-stack">
             <span>BRANCH: main</span>
             <span>PUSH: git push origin</span>
@@ -119,7 +106,6 @@
             <span>DEP: requirements.txt</span>
           </div>
         </div>
-
         <div class="project-card">
           <div class="project-header">
             <span class="status-badge"><span class="status-dot"></span> HEALTHY</span>
@@ -138,55 +124,16 @@
             <span style="cursor: pointer; background: rgba(99, 102, 241, 0.2); color: #c7d2fe; border-color: rgba(99, 102, 241, 0.4); transition: all 0.2s;" onclick="runHealthPing()" onmouseover="this.style.background='rgba(99, 102, 241, 0.4)'" onmouseout="this.style.background='rgba(99, 102, 241, 0.2)'">Click to Ping Node</span>
           </div>
         </div>
-
       </div>
     </section>
-
-    <script>
-        function copyStartCommand() {
-            const commandText = "gunicorn main:app --bind 0.0.0.0:$PORT";
-            const dummyInput = document.createElement("input");
-            dummyInput.value = commandText;
-            document.body.appendChild(dummyInput);
-            dummyInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(dummyInput);
-            showToast('Copied to clipboard');
-        }
-
-        function runHealthPing() {
-            const display = document.getElementById("latencyDisplay");
-            display.innerText = "Pinging endpoint...";
-            display.style.opacity = "0.7";
-            setTimeout(function() {
-                const simulatedMs = Math.floor(Math.random() * 28) + 24;
-                display.innerText = "Response latency: " + simulatedMs + "ms (200 OK)";
-                display.style.opacity = "1";
-                showToast("Probe round-trip: " + simulatedMs + "ms");
-                }, 450);
-            }
-
-        function showToast(msg) {
-            const toast = document.getElementById("toastNotification");
-            toast.innerText = msg;
-            toast.classList.add("show");
-            setTimeout(function() {
-            toast.classList.remove("show");
-            }, 2500);
-        }
-    </script>
 
     <section id="contact" class="contact-section">
       <div class="contact-box">
         <h2>Contact the Webmaster</h2>
         <p>I am always available for system deployments, architecture discussions, and new full-stack builds.</p>
         <div class="contact-buttons">
-          <a href="https://github.com/Kenny-G-z" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            GitHub: @Kenny-G-z
-          </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gosalargk@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            Email: gosalargk@gmail.com
-          </a>
+          <a href="https://github.com/Kenny-G-z" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub: @Kenny-G-z</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gosalargk@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Email: gosalargk@gmail.com</a>
         </div>
       </div>
     </section>
@@ -196,11 +143,9 @@
     <p>© 2026 Kenny G. • Webmaster Infrastructure</p>
   </footer>
 
-  <!-- Toast notification banner -->
   <div id="toastNotification">Command copied to clipboard!</div>
 
-  <!-- Link to your external JavaScript file -->
-  <script src="script.js"></script>
-
+  <!-- Links to script.js in the static folder -->
+  <script src="/static/script.js"></script>
 </body>
 </html>

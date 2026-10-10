@@ -1,10 +1,11 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Webmaster is Live!"
+    # Flask automatically looks inside the 'templates' folder for this file!
+    return render_template("index.html")
 
 @app.route("/game")
 def health_check():
